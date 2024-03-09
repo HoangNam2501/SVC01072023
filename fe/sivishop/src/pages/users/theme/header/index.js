@@ -13,12 +13,12 @@ const Header = () => {
             path: ROUTERS.USER.HOME
         },
         {
-            name: "PRODUCTS",
-            path: ROUTERS.USER.PRODUCT
+            name: "SHOP",
+            path: ""
         },
         {
-            name: "",
-            path: "",
+            name: "PRODUCT",
+            path: "PRODUCT",
             isShowSubMenu: false,
             child: [
                 {
@@ -109,6 +109,21 @@ const Header = () => {
                                             <Link to={menu?.path}>
                                                 {menu?.name}
                                             </Link>
+                                            {
+                                                menu.child && (
+                                                    <ul className="header_menu_dropdown">
+                                                        {
+                                                            menu.child.map((childItem, childKey) => (
+                                                                <li key={`${menuKey}-${childKey}`}>
+                                                                    <Link to={childItem.path}>
+                                                                        {childItem.name}
+                                                                    </Link>
+                                                                </li>
+                                                            ))
+                                                        }
+                                                    </ul>
+                                                )
+                                            }
                                         </li>
                                     ))
                                 }
