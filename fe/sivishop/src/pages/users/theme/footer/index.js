@@ -8,19 +8,19 @@ const Footer = () => {
         <footer className="footer">
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-3">
+                    <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div className="footer_about">
                             <h1 className="footer_about_logo">Nam SHOP</h1>
                             <ul>
                                 <li>
-                                    Location: 713 Nguyem Tat Thanh
+                                    Location: 713 Nguyen Tat Thanh
                                 </li>
                                 <li>Phone: 0911-395-126</li>
                                 <li>Email: hoangquocnam8@gmail.com</li>
                             </ul>
                         </div>
                     </div>
-                    <div className="col-lg-6">
+                    <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div className="footer_widget">
                             <h6>Shop</h6>
                             <ul>
@@ -31,7 +31,7 @@ const Footer = () => {
                                     <Link to="">About us</Link>
                                 </li>
                                 <li>
-                                    <Link to="">business products</Link>
+                                    <Link to="">Business products</Link>
                                 </li>
                             </ul>
                             <ul>
@@ -47,12 +47,12 @@ const Footer = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="col-lg-3">
+                    <div className="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                         <div className="footer_widget">
-                            <h6>promotions & offers</h6>
+                            <h6>Promotions & Offers</h6>
                             <p>Register to have infomation here</p>
                             <form action="#">
-                                <div>
+                                <div className="input-group">
                                     <input type="text" placeholder="Enter email"></input>
                                     <button type="submit" className="button-submit">
                                         Register
