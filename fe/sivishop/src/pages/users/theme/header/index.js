@@ -1,10 +1,50 @@
-import { memo } from "react"
+import { memo, useState } from "react"
 import "./style.scss";
-import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineMail, AiOutlineTwitter, AiOutlineUser } from "react-icons/ai";
+import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineMail, AiOutlineShoppingCart, AiOutlineTwitter, AiOutlineUser } from "react-icons/ai";
 import { Link } from 'react-router-dom'
 import { formatter } from "utils/formatter";
+import { ROUTERS } from "utils/router";
 
 const Header = () => {
+
+    const [menus, setMenu] = useState([
+        {
+            name: "Home",
+            path: ROUTERS.USER.HOME
+        },
+        {
+            name: "PRODUCTS",
+            path: ROUTERS.USER.PRODUCT
+        },
+        {
+            name: "",
+            path: "",
+            isShowSubMenu: false,
+            child: [
+                {
+                    name: "Meat",
+                    path: "",
+                },
+                {
+                    name: "Vegetable",
+                    path: "",
+                },
+                {
+                    name: "FastFood",
+                    path: "",
+                }
+            ]
+        },
+        {
+            name: "BLOGS",
+            path: ""
+        },
+        {
+            name: "CONTACT",
+            path: ""
+        }
+    ]);
+
     return (
         <>
             <div className="header_top">
@@ -56,13 +96,38 @@ const Header = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-xl-3">
-                        LOGO
+                        <div className="header_logo">
+                            <h1>Nam SHOP</h1>
+                        </div>
                     </div>
                     <div className="col-xl-6">
-                        MENU
+                        <nav className="header_menu">
+                            <ul>
+                                {
+                                    menus?.map((menu, menuKey) => (
+                                        <li key={menuKey} className={menuKey === 0 ? "active" : ""}>
+                                            <Link to={menu?.path}>
+                                                {menu?.name}
+                                            </Link>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </nav>
                     </div>
                     <div className="col-xl-3">
-                        PHONE
+                        <div className="header_cart">
+                            <div className="header_cart_price">
+                                <span>{formatter(1001230)}</span>
+                            </div>
+                            <ul>
+                                <li>
+                                    <Link to='#'>
+                                        <AiOutlineShoppingCart /> <span>5</span>
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div> 
