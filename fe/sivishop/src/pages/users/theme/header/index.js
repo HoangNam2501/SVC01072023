@@ -1,13 +1,13 @@
 import { memo, useState } from "react"
 import "./style.scss";
-import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineMail, AiOutlineShoppingCart, AiOutlineTwitter, AiOutlineUser } from "react-icons/ai";
+import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineMail, AiOutlineMenu, AiOutlineShoppingCart, AiOutlineTwitter, AiOutlineUser } from "react-icons/ai";
 import { Link } from 'react-router-dom'
 import { formatter } from "utils/formatter";
 import { ROUTERS } from "utils/router";
 
 const Header = () => {
-
-    const [menus, setMenu] = useState([
+    const [isShowCategories, setIsShowCategories] = useState(true);
+    const [menus] = useState([
         {
             name: "Home",
             path: ROUTERS.USER.HOME
@@ -146,6 +146,44 @@ const Header = () => {
                     </div>
                 </div>
             </div> 
+            <div className="container">
+                <div className="row hero_categories_container">
+                    <div className="col-lg-3 hero_categories">
+                        <div className="hero_categories_all" onClick={() => setIsShowCategories(!isShowCategories)}>
+                            <AiOutlineMenu />
+                            Product List
+                        </div>
+                            <ul className={isShowCategories ? "" : "hidden"}>
+                                <li>
+                                    <Link to="#">
+                                        Fresh meat
+                                    </Link>
+                                </li>    
+                                <li>
+                                    <Link to="#">
+                                        Vegetables
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="#">
+                                        Juice
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="#">
+                                        Fruit
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="#">
+                                        Seafood
+                                    </Link>
+                                </li>                     
+                            </ul>
+                        </div>
+                    <div className="col-lg-9">Phai</div>
+                </div>
+            </div>
         </>
     );
 };
