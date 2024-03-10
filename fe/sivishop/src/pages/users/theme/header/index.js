@@ -1,6 +1,6 @@
 import { memo, useState } from "react"
 import "./style.scss";
-import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineMail, AiOutlineMenu, AiOutlineShoppingCart, AiOutlineTwitter, AiOutlineUser } from "react-icons/ai";
+import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineMail, AiOutlineMenu, AiOutlinePhone, AiOutlineShoppingCart, AiOutlineTwitter, AiOutlineUser } from "react-icons/ai";
 import { Link } from 'react-router-dom'
 import { formatter } from "utils/formatter";
 import { ROUTERS } from "utils/router";
@@ -181,7 +181,37 @@ const Header = () => {
                                 </li>                     
                             </ul>
                         </div>
-                    <div className="col-lg-9">Phai</div>
+                    <div className="col-lg-9 hero_search_container">
+                        <div className="hero_seach">
+                            <div className="hero_search_form">
+                                <form>
+                                    <input type="" name="" value="" placeholder="What are you seaching?"/>
+                                    <button type="submit">Search</button>
+                                </form>
+                            </div>
+                            <div className="hero_search_phone">
+                                <div className="hero_search_phone_icon">
+                                    <AiOutlinePhone />
+                                </div>
+                                <div className="hero_search_phone_text">
+                                    <p>0911.395.126</p>
+                                    <span>Support 24/7</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="hero_item">
+                            <div className="hero_text">
+                                <span>Fresh Fruit</span>
+                                <h2>Vegetables <br />
+                                    Fresh 100%
+                                </h2>
+                                <p>Free delivery</p>
+                                <Link to="" className="primary_btn">
+                                    Buy now
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
